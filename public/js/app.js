@@ -7,6 +7,7 @@ fetch('http://puzzle.mead.io/puzzle').then((response) => {
 })
 
 const url = 'http://127.1.0.0:3000/weather?address='
+const urlHeroku = '/weather?address='
 
 const weatherForm = document.querySelector('form')
 
@@ -22,7 +23,7 @@ weatherForm.addEventListener('submit', (event) => {
     messageTwo.textContent = ''
     const location = search.value
 
-    let urlFull = url + location
+    let urlFull = urlHeroku + location
 
     fetch(urlFull).then((response) => {
         response.json().then((data) => {
